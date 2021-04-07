@@ -38,15 +38,18 @@ setTimeout (function() {
     var numeriVincentiUtente = [];
 
     // Creo un loop per inserire far inserire all'utente 5 numeri
+
     for ( var i = 0; i < numeroNumeri; i++) {
         // Creo la variabile per il numero inserito dall'utente
-        var numeroSingoloUtente = parseInt(prompt('Inserisci uno dei numeri appena visti'))
+        var numeroSingoloUtente = parseInt(prompt('Inserisci uno dei numeri appena visti'));
 
         // Se il numero non è già presente nell'Array, pushalo, altrimenti no
         if ( arrayNumeriComputer.includes(numeroSingoloUtente)) {
             numeriVincentiUtente.push(numeroSingoloUtente);
         }
     }
+    
+   
     var messaggio = ' e i numeri che hai indovinato sono : ' + numeriVincentiUtente;
 
     // 3.STAMPARE IL RISULTATO
