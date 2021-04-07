@@ -5,11 +5,14 @@
 //   tramite il prompt(). 
 //  Dopo che sono stati inseriti i 5 numeri, 
 //  il software dice quanti e quali dei numeri da indovinare sono stati individuati.
-
-// 1. GENERARE 5 NUMERI CASUALMENTE
+// VARIABILI GENERICHE
 var numeroMax = 100;
 var numeroNumeri = 5;
+var secondiConverter = 3 * 1000;
 
+
+
+// 1. GENERARE 5 NUMERI CASUALMENTE
 // Creo un Array per contenere i numeri generati casualmente dal computer
 var arrayNumeriComputer = [];
 
@@ -25,16 +28,36 @@ while ( arrayNumeriComputer.length < numeroNumeri ) {
 
 // Adesso ho l'Array con i numeri generati casualmente dal computer
 
+// Stampo in un alert
+alert(arrayNumeriComputer);
+
 // 2. FAR PARTIRE UN TIMER DI 30 SECONDI
+// Creo una funzione di timeout per far comparire i prompt alla fine dei 30 secondi
+setTimeout (function() {
+    // Creo un Array per i numeri inseriti dall'utente
+    var numeriVincentiUtente = [];
+
+    // Creo un loop per inserire far inserire all'utente 5 numeri
+    for ( var i = 0; i < numeroNumeri; i++) {
+        // Creo la variabile per il numero inserito dall'utente
+        var numeroSingoloUtente = parseInt(prompt('Inserisci uno dei numeri appena visti'))
+
+        // Se il numero non è già presente nell'Array, pushalo, altrimenti no
+        if ( arrayNumeriComputer.includes(numeroSingoloUtente)) {
+            numeriVincentiUtente.push(numeroSingoloUtente);
+        }
+        console.log(numeriVincentiUtente)
+    }
+    
+}, secondiConverter );
+
+console.log(numeriVincentiUtente)
+
+// 3. L'UTENTE DEVE INSERIRE 5 NUMERI IN 5 PROMPT 
 
 
 // FUNZIONI
 // Creo una funzione per generare numeri casualmente
 function numeriCasuali (maxCasuale) {
    return Math.floor(Math.random() * maxCasuale) + 1;
-}
-
-// Creo una funzione per far comparire i prompt
-function generaPrompt (promptUtente) {
-    return promptUtente = parseInt(prompt('Inserisci uno dei numeri appena comparsi a schermo'))
 }
