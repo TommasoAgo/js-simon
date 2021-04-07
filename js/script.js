@@ -46,15 +46,19 @@ setTimeout (function() {
         if ( arrayNumeriComputer.includes(numeroSingoloUtente)) {
             numeriVincentiUtente.push(numeroSingoloUtente);
         }
-        console.log(numeriVincentiUtente)
+    }
+    var messaggio = ' e i numeri che hai indovinato sono : ' + numeriVincentiUtente;
+
+    // 3.STAMPARE IL RISULTATO
+    if ( numeriVincentiUtente.length == arrayNumeriComputer.length ) {
+        alert('HAI VINTO! Il tuo SCORE è di' + ' ' + numeriVincentiUtente.length + ' punti' + messaggio);
+    } else if ( numeriVincentiUtente.length > 0 ) {
+        alert('HAI PERSO! Il tuo SCORE è di' + ' ' + numeriVincentiUtente.length + ' punti' + messaggio);
+    } else {
+        alert('HAI PERSO! Il tuo Score è di' + ' ' + numeriVincentiUtente.length + ' punti' + messaggio);
     }
     
 }, secondiConverter );
-
-console.log(numeriVincentiUtente)
-
-// 3. L'UTENTE DEVE INSERIRE 5 NUMERI IN 5 PROMPT 
-
 
 // FUNZIONI
 // Creo una funzione per generare numeri casualmente
