@@ -5,10 +5,11 @@
 //   tramite il prompt(). 
 //  Dopo che sono stati inseriti i 5 numeri, 
 //  il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+
 // VARIABILI GENERICHE
 var numeroMax = 100;
 var numeroNumeri = 5;
-var secondiConverter = 3 * 1000;
+var secondiConverter = 30 * 1000;
 
 
 
@@ -34,20 +35,23 @@ alert(arrayNumeriComputer);
 // 2. FAR PARTIRE UN TIMER DI 30 SECONDI
 // Creo una funzione di timeout per far comparire i prompt alla fine dei 30 secondi
 setTimeout (function() {
-    // Creo un Array per i numeri inseriti dall'utente
+    // Creo un Array per i numeri vincenti
     var numeriVincentiUtente = [];
 
     // Creo un loop per inserire far inserire all'utente 5 numeri
+  
 
-    for ( var i = 0; i < numeroNumeri; i++) {
+    for ( var i = 0; i < numeroNumeri; i++  ) {
         // Creo la variabile per il numero inserito dall'utente
-        var numeroSingoloUtente = parseInt(prompt('Inserisci uno dei numeri appena visti'));
+        var numeroSingoloUtente = parseInt(prompt('Inserisci un numero tra quelli visti prima'));
 
         // Se il numero non è già presente nell'Array, pushalo, altrimenti no
-        if ( arrayNumeriComputer.includes(numeroSingoloUtente)) {
+        if ( arrayNumeriComputer.includes(numeroSingoloUtente) && !numeriVincentiUtente.includes(numeroSingoloUtente)) {
             numeriVincentiUtente.push(numeroSingoloUtente);
         }
     }
+
+    console.log(numeriVincentiUtente);
     
    
     var messaggio = ' e i numeri che hai indovinato sono : ' + numeriVincentiUtente;
